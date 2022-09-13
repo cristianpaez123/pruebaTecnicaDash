@@ -10,7 +10,7 @@
         android:id="@+id/ConstringToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#4CAF50"
+        android:background="@color/primary"
         android:padding="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="AMB APP"
+            android:text="@string/title_toolbar_login"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Login"
+            android:text="@string/sub_title_toolbar_login"
             android:textColor="@color/white"
             android:textSize="25dp"
             android:textStyle="bold"
@@ -46,16 +46,21 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextUsuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="label"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:hint="@string/phone"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/ConstringToolbar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/shape_cursor_login" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -64,13 +69,67 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:hint="label"
         android:layout_marginTop="30dp"
+        android:hint="@string/password"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextUsuario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/shape_cursor_login" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchMaterial2"
+        style="@style/Widget.App.Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextPassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="@string/text_switch"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/switchMaterial2"
+        app:layout_constraintStart_toEndOf="@+id/switchMaterial2"
+        app:layout_constraintTop_toTopOf="@+id/switchMaterial2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:text="@string/reename_password"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/black"
+        android:paddingHorizontal="50dp"
+        android:paddingVertical="15dp"
+        android:text="@string/text_button_login"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
