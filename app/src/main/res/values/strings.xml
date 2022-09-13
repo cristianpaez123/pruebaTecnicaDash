@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Prueba Tecnica</string>
+    <string name="title_toolbar_login">AMB APP</string>
+    <string name="sub_title_toolbar_login">Login</string>
+    <string name="phone">CELULAR</string>
+    <string name="password">CLAVE</string>
+    <string name="text_switch">Recordar</string>
+    <string name="text_button_login">Entrar</string>
+    <string name="reename_password">Olvido su clave?</string>
 </resources>
