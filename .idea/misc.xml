@@ -3,8 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2776268115942029" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2601425170898438" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable-v24/switch_thumb_login_selector.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/botton_navigation_home.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_home_green.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_person.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_person_background.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/ic_routes.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/shape_cursor_login.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/style_switch_login.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/switch_thumb_login_selector.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/switch_track_login_selector.xml" value="0.1585" />
+        <entry key="app/src/main/res/layout-v23/activity_login.xml" value="0.15260416666666668" />
+        <entry key="app/src/main/res/layout/activity_drawer.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.38495330810546874" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33176269531250013" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_routes.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.31145833333333334" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.31145833333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1585" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1585" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_person.xml" value="0.1585" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_person_round.xml" value="0.1585" />
       </map>
     </option>
   </component>

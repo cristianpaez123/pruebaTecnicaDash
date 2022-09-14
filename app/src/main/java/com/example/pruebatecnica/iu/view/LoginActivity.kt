@@ -1,4 +1,4 @@
-package com.example.pruebatecnica.iu
+package com.example.pruebatecnica.iu.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
