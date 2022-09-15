@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "223327369983",
+    "project_id": "prueba-dash-b0d40",
+    "storage_bucket": "prueba-dash-b0d40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223327369983:android:59c89f1d8c449a9f2ceaca",
+        "android_client_info": {
+          "package_name": "com.example.pruebatecnica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223327369983-c41nk152a7qtpie7dioc8dgavv4vu48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQhmM0v5T4bU7sk6G3C1fbvXWmeLfWKJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223327369983-c41nk152a7qtpie7dioc8dgavv4vu48m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

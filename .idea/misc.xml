@@ -18,11 +18,16 @@
         <entry key="app/src/main/res/drawable/switch_thumb_login_selector.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/switch_track_login_selector.xml" value="0.1585" />
         <entry key="app/src/main/res/layout-v23/activity_login.xml" value="0.15260416666666668" />
+        <entry key="app/src/main/res/layout-v23/adapter.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_drawer.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.38495330810546874" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33176269531250013" />
+        <entry key="app/src/main/res/layout/adapter.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/adapter_routes.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/ejemplo.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_routes.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/sas.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1585" />

@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.bottomNavigation.selectedItemId = R.id.home
+        binding.bottomNavigation.selectedItemId = R.id.routes
         navigationButtonOnClick()
     }
 
