@@ -1,25 +1,21 @@
 package com.example.pruebatecnica.iu.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
-import com.example.pruebatecnica.R
+import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.example.pruebatecnica.databinding.ActivityLoginBinding
-import com.example.pruebatecnica.databinding.ActivityMainBinding
-import com.google.firebase.FirebaseException
+import com.example.pruebatecnica.iu.viewModel.LoginViewModel
+import com.example.pruebatecnica.iu.viewModel.RoutesViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
-import com.google.firebase.auth.PhoneAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import java.util.concurrent.TimeUnit
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
+    private val viewModel: LoginViewModel by viewModels()
     lateinit var binding: ActivityLoginBinding
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
@@ -27,28 +23,50 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        onClick()
-
+        logIn()
+        setupObserver()
     }
 
-    fun onClick() {
-        binding.btnLogin.setOnClickListener {
-            auth.signInAnonymously()
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        val userName = binding.editInputPhone.text.toString()
-                        startMainActivity(userName)
-                    } else {
-                        Toast.makeText(this,"error", Toast.LENGTH_SHORT)
+    private fun setupObserver() {
+        viewModel.resultLogin().observe(
+            this
+        ) { state ->
+            when (state) {
+                is LoginViewModel.GetResultLoginState.DataLoaded -> {
+                    if(state.loginResponseResult){
+                        startMainActivity()
                     }
                 }
+                is LoginViewModel.GetResultLoginState.Error -> {
+                    state.message
+                }
+            }
         }
     }
 
-    private fun startMainActivity(username: String) {
+    fun logIn(){
+        binding.btnLogin.setOnClickListener {
+            var email = binding.editInputEmail.text.toString()
+            var password = binding.editInputPassword.text.toString()
+            if (email.isNotEmpty() && password.isNotEmpty()){
+                viewModel.getResultLogin(email,password)
+            }else{
+                showAlert()
+            }
+        }
+    }
+    private fun startMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("name", username)
         startActivity(intent)
         finish()
+    }
+
+    private fun showAlert(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error de autenticacion")
+        builder.setPositiveButton("Aceptar",null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }

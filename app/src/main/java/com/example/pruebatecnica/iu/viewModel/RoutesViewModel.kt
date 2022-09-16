@@ -21,11 +21,9 @@ class RoutesViewModel @Inject constructor(
     private val dataRoutes: MutableLiveData<GetDataRoutesState> = MutableLiveData()
     fun getDataRoutesState(): LiveData<GetDataRoutesState> = dataRoutes
 
-
-
     fun getDataRoute(){
-        viewModelScope.launch (Dispatchers.IO){
-            dataRoutes.postValue(GetDataRoutesState.Loading)
+        dataRoutes.postValue(GetDataRoutesState.Loading)
+        viewModelScope.launch{
             try {
                 val dataRoute = routeUC.getDataRoute()
                 Log.d("cristian", dataRoute.toString())

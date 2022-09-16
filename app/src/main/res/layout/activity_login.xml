@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ConstringToolbar">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editInputPhone"
+            android:id="@+id/editInputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -78,6 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextUsuario">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editInputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"

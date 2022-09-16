@@ -60,11 +60,11 @@ class RoutesFragment : Fragment() {
     }
 
     fun showLoading() {
-        binding.progressLoadingData.setVisibility(View.VISIBLE)
+        binding.progressLoadingData.visibility = View.VISIBLE
     }
 
     fun hideLoading() {
-        binding.progressLoadingData.setVisibility(View.GONE)
+        binding.progressLoadingData.visibility = View.GONE
     }
 
     fun initRecyclerView() {
