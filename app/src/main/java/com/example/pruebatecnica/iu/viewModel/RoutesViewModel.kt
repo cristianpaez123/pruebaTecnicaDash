@@ -18,16 +18,28 @@ class RoutesViewModel @Inject constructor(
     private val routeUC: RouteUC
 ) : ViewModel()  {
 
-    //private val routeUC: RouteUC = RouteUC()
-    private val dataRoutes: MutableLiveData<Routes> = MutableLiveData()
-    fun getDataRoutesState(): LiveData<Routes> = dataRoutes
+    private val dataRoutes: MutableLiveData<GetDataRoutesState> = MutableLiveData()
+    fun getDataRoutesState(): LiveData<GetDataRoutesState> = dataRoutes
 
 
 
     fun getDataRoute(){
         viewModelScope.launch (Dispatchers.IO){
-            val dataRoute = routeUC.getDataRoute()
-            Log.i("cristian", dataRoute.toString())
+            dataRoutes.postValue(GetDataRoutesState.Loading)
+            try {
+                val dataRoute = routeUC.getDataRoute()
+                Log.d("cristian", dataRoute.toString())
+                dataRoutes.postValue(GetDataRoutesState.DataLoaded(dataRoute))
+            } catch (e: Exception) {
+                dataRoutes.postValue(GetDataRoutesState.Error("error"))
+                Log.d("cristian", e.toString())
+            }
         }
+    }
+
+    sealed class GetDataRoutesState() {
+        object Loading : GetDataRoutesState()
+        data class DataLoaded(val routeResponseResult: List<Routes>) : GetDataRoutesState()
+        data class Error(val message: String) : GetDataRoutesState()
     }
 }

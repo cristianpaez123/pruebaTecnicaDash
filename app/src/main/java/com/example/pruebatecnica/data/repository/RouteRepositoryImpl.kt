@@ -14,9 +14,8 @@ class RouteRepositoryImpl @Inject constructor() {
         FirebaseFirestore.getInstance().collection("routes").get().addOnSuccessListener { result ->
             for (route in result){
                 val distance = route.getString("distance")
-                val imageUrl = route.getString("imageUrl")
                 val name = route.getString("name")
-                val route = Routes(distance!!,imageUrl!!,name!!)
+                val route = Routes(distance!!,name!!)
                 listData.add(route)
                 Log.d("cristian", listData.toString())
             }

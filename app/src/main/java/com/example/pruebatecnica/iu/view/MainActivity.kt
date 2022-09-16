@@ -26,12 +26,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.bottomNavigation.selectedItemId = R.id.routes
         navigationButtonOnClick()
     }
 
     fun navigationButtonOnClick() {
-        binding.bottomNavigation.setOnNavigationItemSelectedListener{
+        binding.bottomNavigation.setOnItemSelectedListener{
             when (it.itemId){
                 R.id.home -> {
                     setCurrentFragment(homeFragment)
