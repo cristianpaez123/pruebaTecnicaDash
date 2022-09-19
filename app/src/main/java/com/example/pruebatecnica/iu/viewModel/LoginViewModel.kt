@@ -12,16 +12,22 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val loginUC: LoginUC
-):ViewModel() {
+) : ViewModel() {
 
     private val _resultLogin: MutableLiveData<GetResultLoginState> = MutableLiveData()
     fun resultLogin(): LiveData<GetResultLoginState> = _resultLogin
 
-    fun getResultLogin(email:String,password:String) {
+    fun getResultLogin(email: String, password: String) {
         viewModelScope.launch {
             try {
-                val dataLogin = loginUC.getResultLogin(email,password)
-                _resultLogin.postValue(GetResultLoginState.DataLoaded(dataLogin))
+                val dataLogin = loginUC.getResultLogin(email, password)
+                dataLogin.addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        _resultLogin.postValue(GetResultLoginState.SuccessLogin)
+                    }else{
+                        _resultLogin.postValue(GetResultLoginState.Error("credenciales no validas"))
+                    }
+                }
             } catch (e: Exception) {
                 _resultLogin.postValue(GetResultLoginState.Error("error"))
             }
@@ -29,7 +35,7 @@ class LoginViewModel @Inject constructor(
     }
 
     sealed class GetResultLoginState() {
-        data class DataLoaded(val loginResponseResult: Boolean) : GetResultLoginState()
+        object SuccessLogin : GetResultLoginState()
         data class Error(val message: String) : GetResultLoginState()
     }
 

@@ -8,7 +8,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pruebatecnica.databinding.ActivityLoginBinding
 import com.example.pruebatecnica.iu.viewModel.LoginViewModel
-import com.example.pruebatecnica.iu.viewModel.RoutesViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,13 +31,11 @@ class LoginActivity : AppCompatActivity() {
             this
         ) { state ->
             when (state) {
-                is LoginViewModel.GetResultLoginState.DataLoaded -> {
-                    if(state.loginResponseResult){
+                is LoginViewModel.GetResultLoginState.SuccessLogin -> {
                         startMainActivity()
-                    }
                 }
                 is LoginViewModel.GetResultLoginState.Error -> {
-                    state.message
+                    Toast.makeText(this, state.message,Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -64,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
     private fun showAlert(){
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error de autenticacion")
+        builder.setMessage("ingrese correo o contraseña validos")
         builder.setPositiveButton("Aceptar",null)
         val dialog: AlertDialog = builder.create()
         dialog.show()

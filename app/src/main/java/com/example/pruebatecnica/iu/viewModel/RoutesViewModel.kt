@@ -16,18 +16,27 @@ import javax.inject.Inject
 @HiltViewModel
 class RoutesViewModel @Inject constructor(
     private val routeUC: RouteUC
-) : ViewModel()  {
+) : ViewModel() {
 
     private val dataRoutes: MutableLiveData<GetDataRoutesState> = MutableLiveData()
     fun getDataRoutesState(): LiveData<GetDataRoutesState> = dataRoutes
 
-    fun getDataRoute(){
-        dataRoutes.postValue(GetDataRoutesState.Loading)
-        viewModelScope.launch{
+    fun getDataRoute() {
+        val listData = mutableListOf<Routes>()
+        viewModelScope.launch(Dispatchers.IO) {
+            dataRoutes.postValue(GetDataRoutesState.Loading)
             try {
                 val dataRoute = routeUC.getDataRoute()
                 Log.d("cristian", dataRoute.toString())
-                dataRoutes.postValue(GetDataRoutesState.DataLoaded(dataRoute))
+                dataRoute.addOnSuccessListener { result ->
+                    for (route in result) {
+                        val distance = route.getString("distance") ?: return@addOnSuccessListener
+                        val name = route.getString("name") ?: return@addOnSuccessListener
+                        val route = Routes(distance, name)
+                        listData.add(route)
+                    }
+                }
+                dataRoutes.postValue(GetDataRoutesState.DataLoaded(listData))
             } catch (e: Exception) {
                 dataRoutes.postValue(GetDataRoutesState.Error("error"))
                 Log.d("cristian", e.toString())

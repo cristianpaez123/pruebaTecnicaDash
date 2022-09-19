@@ -2,7 +2,7 @@
     <string name="app_name">Prueba Tecnica</string>
     <string name="title_toolbar_login">AMB APP</string>
     <string name="sub_title_toolbar_login">Login</string>
-    <string name="phone">CELULAR</string>
+    <string name="email">CORREO</string>
     <string name="password">CLAVE</string>
     <string name="text_switch">Recordar</string>
     <string name="text_button_login">Entrar</string>
@@ -10,7 +10,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_routes">Rutas</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="description_home_navigation">LOREM IPSUM DOLOR SIT</string>
 </resources>

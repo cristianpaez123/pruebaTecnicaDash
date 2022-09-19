@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/home"
+        android:icon="@drawable/ic_home"
         android:title="@string/menu_home"
         app:showAsAction="never" />
     <item
         android:id="@+id/routes"
+        android:icon="@drawable/ic_routes"
         android:title="@string/menu_routes"
         app:showAsAction="never" />
 </menu>

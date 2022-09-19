@@ -16,7 +16,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class RoutesFragment : Fragment() {
 
     private val viewModel: RoutesViewModel by viewModels()
-
     private var routeAdapter: RoutesAdapter? = null
     private var _binding: FragmentRoutesBinding? = null
     private val binding get() = _binding!!
